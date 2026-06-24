@@ -4,198 +4,396 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethan Giri - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --ink: #16213e;
+            --ink-soft: #475069;
+            --muted: #6b7280;
+            --accent: #0f9d76;
+            --accent-soft: #e7f5f0;
+            --bg: #f4f6f9;
+            --card: #ffffff;
+            --line: #e8ebf0;
+            --shadow: 0 1px 2px rgba(16, 33, 62, 0.04), 0 12px 30px rgba(16, 33, 62, 0.06);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.65;
+            color: var(--ink-soft);
+            background:
+                radial-gradient(1200px 600px at 50% -200px, #eef2f8 0%, transparent 70%),
+                var(--bg);
+            -webkit-font-smoothing: antialiased;
         }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 860px; margin: 0 auto; padding: 0 22px 64px; }
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 60px 30px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 55%, #0f3a47 100%);
+            color: #fff;
             text-align: center;
-            border-radius: 0 0 20px 20px;
+            padding: 72px 30px 56px;
+            border-radius: 0 0 28px 28px;
+            position: relative;
+            overflow: hidden;
         }
-        header h1 { font-size: 3em; margin-bottom: 10px; letter-spacing: 2px; }
-        header .contact {
-            font-size: 1.1em;
-            opacity: 0.9;
+        header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(600px 200px at 80% 0%, rgba(15,157,118,0.28), transparent 70%);
+            pointer-events: none;
+        }
+        .eyebrow {
+            font-size: 0.78rem;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+        header h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2.6rem, 7vw, 4.1rem);
+            line-height: 1.04;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+        .contact {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 12px 28px;
             flex-wrap: wrap;
+            font-size: 0.98rem;
         }
-        header .contact a { color: white; text-decoration: none; }
-        header .contact a:hover { color: #4ecca3; }
+        .contact a, .contact span {
+            color: rgba(255,255,255,0.88);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s ease;
+        }
+        .contact a:hover { color: var(--accent); }
+        .contact svg { width: 17px; height: 17px; opacity: 0.85; flex-shrink: 0; }
+
+        /* Sections */
+        main { margin-top: -26px; position: relative; z-index: 1; }
         section {
-            background: white;
-            margin: 20px 0;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: var(--card);
+            margin: 22px 0;
+            padding: 34px 38px;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
         }
         h2 {
-            color: #1a1a2e;
-            font-size: 1.8em;
-            border-bottom: 3px solid #4ecca3;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
+            font-family: 'Fraunces', Georgia, serif;
+            color: var(--ink);
+            font-size: 1.55rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 26px;
         }
-        h3 { color: #16213e; font-size: 1.3em; margin-bottom: 8px; }
-        h4 { color: #4ecca3; font-size: 1.1em; margin-bottom: 10px; font-weight: 600; }
-        .date { color: #666; font-size: 0.9em; font-style: italic; margin-bottom: 15px; }
+        h2::before {
+            content: "";
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-soft);
+            flex-shrink: 0;
+        }
+        h3 { color: var(--ink); font-size: 1.12rem; font-weight: 600; margin-bottom: 4px; line-height: 1.4; }
+        h4 {
+            color: var(--accent);
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 18px 0 8px;
+        }
+        p { color: var(--ink-soft); }
+
+        /* Education */
         .gpa {
-            background: #4ecca3;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            display: inline-block;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-bottom: 10px;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            background: var(--accent-soft);
+            color: #0b6b51;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
         }
-        ul { list-style: none; }
-        ul li::before {
-            content: "→";
-            color: #4ecca3;
-            font-weight: bold;
-            margin-right: 10px;
+        .gpa span { font-weight: 500; color: #1c8a6b; font-size: 0.85rem; }
+        .edu-meta { color: var(--muted); font-size: 0.95rem; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+        .skill {
+            background: #fafbfc;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 20px;
         }
-        .courses { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .skill h3 { font-size: 1.02rem; margin-bottom: 8px; }
+        .skill p { font-size: 0.92rem; }
+
+        /* Courses */
+        .courses { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .course-year {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #4ecca3;
+            background: #fafbfc;
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--accent);
+            border-radius: 12px;
+            padding: 20px 22px;
         }
-        .course-year h3 { margin-bottom: 15px; color: #1a1a2e; }
-        .course-year ul li { margin-bottom: 8px; padding-left: 5px; }
-        .score { color: #4ecca3; font-weight: bold; }
+        .course-year h3 { margin-bottom: 14px; font-size: 1.05rem; }
+        .course-year ul { list-style: none; }
+        .course-year li {
+            font-size: 0.95rem;
+            padding: 5px 0 5px 22px;
+            position: relative;
+            color: var(--ink-soft);
+        }
+        .course-year li::before {
+            content: "";
+            position: absolute;
+            left: 2px; top: 13px;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.55;
+        }
+        .score {
+            color: #0b6b51;
+            background: var(--accent-soft);
+            font-weight: 600;
+            font-size: 0.78rem;
+            padding: 1px 8px;
+            border-radius: 999px;
+            margin-left: 4px;
+            white-space: nowrap;
+        }
+
+        /* Extracurriculars */
+        .activity { padding: 4px 0; }
+        .activity + .activity { border-top: 1px solid var(--line); margin-top: 22px; padding-top: 22px; }
+        .role-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
         .leadership {
-            background: #e8f4f8;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
+            background: linear-gradient(180deg, #f3faf7 0%, #fafbfc 100%);
+            border: 1px solid #d8efe7;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: 14px 0;
         }
-        .leadership h4 { margin-top: 0; }
-        @media (max-width: 600px) {
-            header h1 { font-size: 2em; }
-            header .contact { flex-direction: column; gap: 10px; }
+        .leadership h3, .leadership h4 { margin-top: 0; }
+        .leadership p { font-size: 0.94rem; }
+        .instrument {
+            margin: 16px 0;
+            padding-left: 18px;
+            border-left: 2px solid var(--line);
+        }
+        .instrument ul { list-style: none; }
+        .instrument li {
+            font-size: 0.95rem;
+            padding: 4px 0 4px 22px;
+            position: relative;
+            color: var(--ink-soft);
+        }
+        .instrument li::before {
+            content: "♪";
+            position: absolute;
+            left: 0; top: 3px;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        .instrument p { font-size: 0.95rem; }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.82rem;
+            margin-top: 36px;
+        }
+
+        @media (max-width: 640px) {
+            header { padding: 56px 22px 48px; }
+            section { padding: 26px 22px; }
             .courses { grid-template-columns: 1fr; }
-            section { padding: 20px; }
+        }
+
+        @media print {
+            body { background: #fff; }
+            header { border-radius: 0; padding: 40px 30px; }
+            section, .skill, .course-year, .leadership { box-shadow: none; }
+            section { break-inside: avoid; border-color: #ddd; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>ETHAN GIRI</h1>
+        <div class="eyebrow">Student &middot; Musician &middot; Leader</div>
+        <h1>Ethan Giri</h1>
         <div class="contact">
-            <span>424-234-9241</span>
-            <span>giri.ethan@gmail.com</span>
+            <a href="tel:4242349241">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                424-234-9241
+            </a>
+            <a href="mailto:giri.ethan@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                giri.ethan@gmail.com
+            </a>
         </div>
     </header>
 
     <div class="container">
-        <section id="education">
-            <h2>Education</h2>
-            <div class="gpa">GPA: 4.6 (Weighted)</div>
-            <h3>Basha High School - 11th Grade</h3>
-        </section>
+        <main>
+            <section id="education">
+                <h2>Education</h2>
+                <div class="gpa">4.6 GPA <span>weighted</span></div>
+                <h3>Basha High School</h3>
+                <p class="edu-meta">11th Grade</p>
+            </section>
 
-        <section id="skills">
-            <h2>Core Skills</h2>
-            <h3>Advanced Academic Foundations</h3>
-            <p>Highly proficient in advanced mathematics (Calculus, Precalculus) and foundational sciences (Chemistry, Biology).</p>
-            
-            <h3>Instruction & Mentorship</h3>
-            <p>Experienced in guiding, coaching, and explaining complex concepts to peers and younger students.</p>
-            
-            <h3>Leadership & Organization</h3>
-            <p>Proven track record of coordinating logistics and volunteer personnel at events while achieving administrative deadlines.</p>
-        </section>
+            <section id="skills">
+                <h2>Core Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill">
+                        <h3>Advanced Academic Foundations</h3>
+                        <p>Highly proficient in advanced mathematics (Calculus, Precalculus) and foundational sciences (Chemistry, Biology).</p>
+                    </div>
+                    <div class="skill">
+                        <h3>Instruction &amp; Mentorship</h3>
+                        <p>Experienced in guiding, coaching, and explaining complex concepts to peers and younger students.</p>
+                    </div>
+                    <div class="skill">
+                        <h3>Leadership &amp; Organization</h3>
+                        <p>Proven track record of coordinating logistics and volunteer personnel at events while achieving administrative deadlines.</p>
+                    </div>
+                </div>
+            </section>
 
-        <section id="courses">
-            <h2>School Courses</h2>
-            
-            <div class="course-year">
-                <h3>9th Grade</h3>
-                <ul>
-                    <li>Marching Band</li>
-                    <li>Wind Ensemble</li>
-                    <li>Honors English 9</li>
-                    <li>Honors Precalculus</li>
-                    <li>Honors Spanish 3</li>
-                    <li>Honors Chemistry</li>
-                    <li>AP World History (Score: 4)</li>
-                </ul>
-            </div>
+            <section id="courses">
+                <h2>School Courses</h2>
+                <div class="courses">
+                    <div class="course-year">
+                        <h3>9th Grade</h3>
+                        <ul>
+                            <li>Marching Band</li>
+                            <li>Wind Ensemble</li>
+                            <li>Honors English 9</li>
+                            <li>Honors Precalculus</li>
+                            <li>Honors Spanish 3</li>
+                            <li>Honors Chemistry</li>
+                            <li>AP World History <span class="score">Score: 4</span></li>
+                        </ul>
+                    </div>
+                    <div class="course-year">
+                        <h3>10th Grade</h3>
+                        <ul>
+                            <li>Marching Band</li>
+                            <li>Wind Ensemble</li>
+                            <li>Varsity Jazz Band</li>
+                            <li>AP Spanish 4</li>
+                            <li>AP Seminar</li>
+                            <li>AP Calculus BC</li>
+                            <li>AP Chemistry</li>
+                            <li>AP Biology <span class="score">Score: 5</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-            <div class="course-year">
-                <h3>10th Grade</h3>
-                <ul>
-                    <li>Marching Band</li>
-                    <li>Wind Ensemble</li>
-                    <li>Varsity Jazz Band</li>
-                    <li>AP Spanish 4</li>
-                    <li>AP Seminar</li>
-                    <li>AP Calculus BC</li>
-                    <li>AP Chemistry</li>
-                    <li>AP Biology (Score: 5)</li>
-                </ul>
-            </div>
-        </section>
+            <section id="extracurriculars">
+                <h2>Extracurriculars</h2>
 
-        <section id="extracurriculars">
-            <h2>Extracurriculars</h2>
-            
-            <div class="leadership">
-                <h3>Band Council President (11th Grade - Appointed position taking effect in the upcoming school year)</h3>
-                <p>Coordinating various committees that are dedicated to the success of the Basha Bands through recruitment, mentorship, and organization.</p>
-            </div>
+                <div class="activity">
+                    <div class="leadership">
+                        <span class="role-tag">Appointed &middot; Upcoming school year</span>
+                        <h3>Band Council President &mdash; 11th Grade</h3>
+                        <p>Coordinating various committees that are dedicated to the success of the Basha Bands through recruitment, mentorship, and organization.</p>
+                    </div>
 
-            <h3>Band | 6th Grade – Current</h3>
-            <p>Multi-instrumentalist in multiple different ensembles in the Basha Bands Program.</p>
-            
-            <h4>Bb Clarinet</h4>
-            <ul>
-                <li>Auditioned into Arizona All-State Band (8th, 9th, 10th grade) and top Concert Ensemble at Basha (9th)</li>
-                <li>Awarded "Outstanding Performer of the Year" (9th)</li>
-                <li>Featured as a Carnegie Hall Soloist with the Basha Symphony Orchestra through the National Concerts Program (10th)</li>
-            </ul>
-            
-            <h4>Tenor Saxophone</h4>
-            <ul>
-                <li>Auditioned into the top Jazz Ensemble at Basha (10th)</li>
-                <li>Earned "Superior with Distinction" at the Area Jazz Festival (10th)</li>
-            </ul>
-            
-            <h4>Snare Drum</h4>
-            <ul>
-                <li>Auditioned for a spot on the Basha Snareline (11th)</li>
-            </ul>
-            
-            <h4>Marching Band</h4>
-            <p>Participated in the Basha Bear Regiment every year since 9th grade, including a featured Clarinet quartet role in the 10th-grade production.</p>
-            
-            <h4>Winter Drumline</h4>
-            <p>Participated in the Basha Indoor Percussion Ensemble every year since 9th grade; named WGAZ Open Class State Champions (10th).</p>
+                    <span class="role-tag">6th Grade &ndash; Current</span>
+                    <h3>Band</h3>
+                    <p>Multi-instrumentalist in multiple different ensembles in the Basha Bands Program.</p>
 
-            <h3>Spanish Honors Society | 8th Grade – Current</h3>
-            <div class="leadership">
-                <h4>Junior Chapter Vice President (9th Grade)</h4>
-                <p>Organized and participated in volunteering efforts at school events, including running booths at the annual Hugs for the Holidays event. Actively involved in recruitment at Club Drives.</p>
-            </div>
+                    <div class="instrument">
+                        <h4>Bb Clarinet</h4>
+                        <ul>
+                            <li>Auditioned into Arizona All-State Band (8th, 9th, 10th grade) and top Concert Ensemble at Basha (9th)</li>
+                            <li>Awarded "Outstanding Performer of the Year" (9th)</li>
+                            <li>Featured as a Carnegie Hall Soloist with the Basha Symphony Orchestra through the National Concerts Program (10th)</li>
+                        </ul>
+                    </div>
 
-            <h3>National Honors Society | 11th Grade – Current</h3>
-            <div class="leadership">
-                <h4>Junior Blood Drive Coordinator (Appointed position taking effect in the upcoming school year)</h4>
-                <p>Responsible for promoting and organizing four annual blood drives at Basha.</p>
-            </div>
-        </section>
+                    <div class="instrument">
+                        <h4>Tenor Saxophone</h4>
+                        <ul>
+                            <li>Auditioned into the top Jazz Ensemble at Basha (10th)</li>
+                            <li>Earned "Superior with Distinction" at the Area Jazz Festival (10th)</li>
+                        </ul>
+                    </div>
+
+                    <div class="instrument">
+                        <h4>Snare Drum</h4>
+                        <ul>
+                            <li>Auditioned for a spot on the Basha Snareline (11th)</li>
+                        </ul>
+                    </div>
+
+                    <div class="instrument">
+                        <h4>Marching Band</h4>
+                        <p>Participated in the Basha Bear Regiment every year since 9th grade, including a featured Clarinet quartet role in the 10th-grade production.</p>
+                    </div>
+
+                    <div class="instrument">
+                        <h4>Winter Drumline</h4>
+                        <p>Participated in the Basha Indoor Percussion Ensemble every year since 9th grade; named WGAZ Open Class State Champions (10th).</p>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <span class="role-tag">8th Grade &ndash; Current</span>
+                    <h3>Spanish Honors Society</h3>
+                    <div class="leadership">
+                        <h4>Junior Chapter Vice President (9th Grade)</h4>
+                        <p>Organized and participated in volunteering efforts at school events, including running booths at the annual Hugs for the Holidays event. Actively involved in recruitment at Club Drives.</p>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <span class="role-tag">11th Grade &ndash; Current</span>
+                    <h3>National Honors Society</h3>
+                    <div class="leadership">
+                        <span class="role-tag">Appointed &middot; Upcoming school year</span>
+                        <h4>Junior Blood Drive Coordinator</h4>
+                        <p>Responsible for promoting and organizing four annual blood drives at Basha.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>Ethan Giri &middot; Resume</footer>
     </div>
 </body>
 </html>
