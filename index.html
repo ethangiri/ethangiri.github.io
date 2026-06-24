@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Giri - Resume</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+        header h1 { font-size: 3em; margin-bottom: 10px; letter-spacing: 2px; }
+        header .contact {
+            font-size: 1.1em;
+            opacity: 0.9;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        header .contact a { color: white; text-decoration: none; }
+        header .contact a:hover { color: #4ecca3; }
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1a1a2e;
+            font-size: 1.8em;
+            border-bottom: 3px solid #4ecca3;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        h3 { color: #16213e; font-size: 1.3em; margin-bottom: 8px; }
+        h4 { color: #4ecca3; font-size: 1.1em; margin-bottom: 10px; font-weight: 600; }
+        .date { color: #666; font-size: 0.9em; font-style: italic; margin-bottom: 15px; }
+        .gpa {
+            background: #4ecca3;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        ul { list-style: none; }
+        ul li::before {
+            content: "→";
+            color: #4ecca3;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .courses { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .course-year {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4ecca3;
+        }
+        .course-year h3 { margin-bottom: 15px; color: #1a1a2e; }
+        .course-year ul li { margin-bottom: 8px; padding-left: 5px; }
+        .score { color: #4ecca3; font-weight: bold; }
+        .leadership {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .leadership h4 { margin-top: 0; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 2em; }
+            header .contact { flex-direction: column; gap: 10px; }
+            .courses { grid-template-columns: 1fr; }
+            section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ETHAN GIRI</h1>
+        <div class="contact">
+            <span>424-234-9241</span>
+            <span>giri.ethan@gmail.com</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="education">
+            <h2>Education</h2>
+            <div class="gpa">GPA: 4.6 (Weighted)</div>
+            <h3>Basha High School - 11th Grade</h3>
+        </section>
+
+        <section id="skills">
+            <h2>Core Skills</h2>
+            <h3>Advanced Academic Foundations</h3>
+            <p>Highly proficient in advanced mathematics (Calculus, Precalculus) and foundational sciences (Chemistry, Biology).</p>
+            
+            <h3>Instruction & Mentorship</h3>
+            <p>Experienced in guiding, coaching, and explaining complex concepts to peers and younger students.</p>
+            
+            <h3>Leadership & Organization</h3>
+            <p>Proven track record of coordinating logistics and volunteer personnel at events while achieving administrative deadlines.</p>
+        </section>
+
+        <section id="courses">
+            <h2>School Courses</h2>
+            
+            <div class="course-year">
+                <h3>9th Grade</h3>
+                <ul>
+                    <li>Marching Band</li>
+                    <li>Wind Ensemble</li>
+                    <li>Honors English 9</li>
+                    <li>Honors Precalculus</li>
+                    <li>Honors Spanish 3</li>
+                    <li>Honors Chemistry</li>
+                    <li>AP World History (Score: 4)</li>
+                </ul>
+            </div>
+
+            <div class="course-year">
+                <h3>10th Grade</h3>
+                <ul>
+                    <li>Marching Band</li>
+                    <li>Wind Ensemble</li>
+                    <li>Varsity Jazz Band</li>
+                    <li>AP Spanish 4</li>
+                    <li>AP Seminar</li>
+                    <li>AP Calculus BC</li>
+                    <li>AP Chemistry</li>
+                    <li>AP Biology (Score: 5)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="extracurriculars">
+            <h2>Extracurriculars</h2>
+            
+            <div class="leadership">
+                <h3>Band Council President (11th Grade - Appointed position taking effect in the upcoming school year)</h3>
+                <p>Coordinating various committees that are dedicated to the success of the Basha Bands through recruitment, mentorship, and organization.</p>
+            </div>
+
+            <h3>Band | 6th Grade – Current</h3>
+            <p>Multi-instrumentalist in multiple different ensembles in the Basha Bands Program.</p>
+            
+            <h4>Bb Clarinet</h4>
+            <ul>
+                <li>Auditioned into Arizona All-State Band (8th, 9th, 10th grade) and top Concert Ensemble at Basha (9th)</li>
+                <li>Awarded "Outstanding Performer of the Year" (9th)</li>
+                <li>Featured as a Carnegie Hall Soloist with the Basha Symphony Orchestra through the National Concerts Program (10th)</li>
+            </ul>
+            
+            <h4>Tenor Saxophone</h4>
+            <ul>
+                <li>Auditioned into the top Jazz Ensemble at Basha (10th)</li>
+                <li>Earned "Superior with Distinction" at the Area Jazz Festival (10th)</li>
+            </ul>
+            
+            <h4>Snare Drum</h4>
+            <ul>
+                <li>Auditioned for a spot on the Basha Snareline (11th)</li>
+            </ul>
+            
+            <h4>Marching Band</h4>
+            <p>Participated in the Basha Bear Regiment every year since 9th grade, including a featured Clarinet quartet role in the 10th-grade production.</p>
+            
+            <h4>Winter Drumline</h4>
+            <p>Participated in the Basha Indoor Percussion Ensemble every year since 9th grade; named WGAZ Open Class State Champions (10th).</p>
+
+            <h3>Spanish Honors Society | 8th Grade – Current</h3>
+            <div class="leadership">
+                <h4>Junior Chapter Vice President (9th Grade)</h4>
+                <p>Organized and participated in volunteering efforts at school events, including running booths at the annual Hugs for the Holidays event. Actively involved in recruitment at Club Drives.</p>
+            </div>
+
+            <h3>National Honors Society | 11th Grade – Current</h3>
+            <div class="leadership">
+                <h4>Junior Blood Drive Coordinator (Appointed position taking effect in the upcoming school year)</h4>
+                <p>Responsible for promoting and organizing four annual blood drives at Basha.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
