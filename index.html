@@ -3,397 +3,637 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethan Giri - Resume</title>
+    <title>Ethan Giri — Musician · Student Leader · Academic</title>
+    <meta name="description" content="Portfolio of Ethan Giri — high school musician, student leader, and academic. Class of 2028.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --ink: #16213e;
-            --ink-soft: #475069;
-            --muted: #6b7280;
-            --accent: #0f9d76;
-            --accent-soft: #e7f5f0;
-            --bg: #f4f6f9;
-            --card: #ffffff;
-            --line: #e8ebf0;
-            --shadow: 0 1px 2px rgba(16, 33, 62, 0.04), 0 12px 30px rgba(16, 33, 62, 0.06);
+            --bg: #0a0e1a;
+            --bg-2: #0f1629;
+            --surface: rgba(255, 255, 255, 0.04);
+            --surface-strong: rgba(255, 255, 255, 0.07);
+            --border: rgba(255, 255, 255, 0.09);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --text: #f1f5f9;
+            --text-soft: #aab4c5;
+            --text-dim: #6b7689;
+            --blue: #3b82f6;
+            --mint: #2dd4bf;
+            --purple: #a855f7;
+            --grad: linear-gradient(120deg, #3b82f6 0%, #2dd4bf 55%, #a855f7 100%);
+            --maxw: 1080px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.65;
-            color: var(--ink-soft);
-            background:
-                radial-gradient(1200px 600px at 50% -200px, #eef2f8 0%, transparent 70%),
-                var(--bg);
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
-        .container { max-width: 860px; margin: 0 auto; padding: 0 22px 64px; }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 55%, #0f3a47 100%);
-            color: #fff;
-            text-align: center;
-            padding: 72px 30px 56px;
-            border-radius: 0 0 28px 28px;
-            position: relative;
-            overflow: hidden;
-        }
-        header::after {
+        body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             inset: 0;
-            background: radial-gradient(600px 200px at 80% 0%, rgba(15,157,118,0.28), transparent 70%);
-            pointer-events: none;
+            z-index: -1;
+            background:
+                radial-gradient(700px 500px at 12% -5%, rgba(59,130,246,0.18), transparent 60%),
+                radial-gradient(680px 520px at 92% 8%, rgba(168,85,247,0.16), transparent 60%),
+                radial-gradient(900px 700px at 50% 110%, rgba(45,212,191,0.12), transparent 60%),
+                var(--bg);
+        }
+        h1, h2, h3, .brand, .stat-num, .btn { font-family: 'Poppins', sans-serif; }
+        a { color: inherit; text-decoration: none; }
+        section { padding: 92px 0; }
+        .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+        .grad-text {
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .eyebrow {
+            font-family: 'Poppins', sans-serif;
             font-size: 0.78rem;
-            letter-spacing: 0.32em;
+            font-weight: 600;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: var(--mint);
+        }
+        .section-head { margin-bottom: 48px; }
+        .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.15; margin-top: 10px; }
+        .section-head p { color: var(--text-soft); margin-top: 12px; max-width: 560px; }
+
+        /* Icons */
+        .lucide, [data-lucide] { width: 1em; height: 1em; stroke-width: 2; }
+
+        /* Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            background: rgba(10, 14, 26, 0.6);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+        .brand { font-weight: 700; font-size: 1.15rem; letter-spacing: 0.5px; }
+        .brand .dot { color: var(--mint); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { color: var(--text-soft); font-size: 0.92rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta {
+            padding: 9px 18px;
+            border-radius: 999px;
+            background: var(--grad);
+            color: #06101f !important;
             font-weight: 600;
-            margin-bottom: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.88rem;
         }
-        header h1 {
-            font-family: 'Fraunces', Georgia, serif;
-            font-size: clamp(2.6rem, 7vw, 4.1rem);
-            line-height: 1.04;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-            margin-bottom: 22px;
-        }
-        .contact {
-            display: flex;
-            justify-content: center;
-            gap: 12px 28px;
-            flex-wrap: wrap;
-            font-size: 0.98rem;
-        }
-        .contact a, .contact span {
-            color: rgba(255,255,255,0.88);
-            text-decoration: none;
+        .nav-toggle { display: none; background: none; border: 0; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+        /* Buttons */
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            transition: color 0.2s ease;
+            gap: 9px;
+            padding: 13px 24px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s;
         }
-        .contact a:hover { color: var(--accent); }
-        .contact svg { width: 17px; height: 17px; opacity: 0.85; flex-shrink: 0; }
+        .btn svg { width: 18px; height: 18px; }
+        .btn-primary { background: var(--grad); color: #06101f; box-shadow: 0 10px 30px rgba(59,130,246,0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(59,130,246,0.4); }
+        .btn-ghost { background: var(--surface); border-color: var(--border-strong); color: var(--text); }
+        .btn-ghost:hover { background: var(--surface-strong); transform: translateY(-2px); }
 
-        /* Sections */
-        main { margin-top: -26px; position: relative; z-index: 1; }
-        section {
-            background: var(--card);
-            margin: 22px 0;
-            padding: 34px 38px;
+        /* Hero */
+        .hero { padding-top: 70px; padding-bottom: 60px; }
+        .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 50px; align-items: center; }
+        .hero .badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 7px 15px; border-radius: 999px;
+            background: var(--surface); border: 1px solid var(--border);
+            font-size: 0.82rem; color: var(--text-soft); margin-bottom: 22px;
+        }
+        .hero .badge .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 0 rgba(45,212,191,0.6); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(45,212,191,0.5);} 70% { box-shadow: 0 0 0 10px rgba(45,212,191,0);} 100% { box-shadow: 0 0 0 0 rgba(45,212,191,0);} }
+        .hero h1 { font-size: clamp(2.6rem, 6.5vw, 4.4rem); font-weight: 800; line-height: 1.04; letter-spacing: -1px; }
+        .hero .typed-line { font-family: 'Poppins', sans-serif; font-size: clamp(1.1rem, 2.6vw, 1.6rem); font-weight: 600; margin-top: 16px; min-height: 1.6em; }
+        #typed { color: var(--mint); }
+        .cursor { display: inline-block; width: 2px; background: var(--mint); margin-left: 2px; animation: blink 1s steps(1) infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        .hero p.lead { color: var(--text-soft); font-size: 1.05rem; margin-top: 20px; max-width: 480px; }
+        .hero-actions { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+        .hero-contacts { display: flex; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
+        .chip {
+            display: inline-flex; align-items: center; gap: 9px;
+            padding: 10px 16px; border-radius: 12px;
+            background: var(--surface); border: 1px solid var(--border);
+            font-size: 0.9rem; color: var(--text-soft); transition: 0.2s;
+        }
+        .chip:hover { border-color: var(--mint); color: var(--text); transform: translateY(-2px); }
+        .chip svg { width: 17px; height: 17px; color: var(--mint); }
+
+        /* Hero portrait placeholder */
+        .portrait {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            border-radius: 24px;
+            background:
+                linear-gradient(160deg, rgba(59,130,246,0.18), rgba(168,85,247,0.14)),
+                var(--bg-2);
+            border: 1px solid var(--border-strong);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: 14px; color: var(--text-dim); text-align: center; padding: 20px;
+            overflow: hidden;
+        }
+        .portrait svg { width: 54px; height: 54px; color: var(--mint); opacity: 0.7; }
+        .portrait .ph-label { font-size: 0.85rem; }
+        .portrait .glow { position: absolute; width: 220px; height: 220px; border-radius: 50%; filter: blur(60px); background: var(--blue); opacity: 0.25; top: -40px; right: -40px; }
+
+        /* Spotlight */
+        .spotlight-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        .stat-card {
+            position: relative;
+            padding: 26px 22px;
             border-radius: 18px;
-            border: 1px solid var(--line);
-            box-shadow: var(--shadow);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
         }
-        h2 {
-            font-family: 'Fraunces', Georgia, serif;
-            color: var(--ink);
-            font-size: 1.55rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 26px;
+        .stat-card:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+        .stat-card .ic {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: grid; place-items: center; margin-bottom: 16px;
+            background: rgba(45,212,191,0.12); color: var(--mint);
         }
-        h2::before {
-            content: "";
-            width: 9px; height: 9px;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 0 4px var(--accent-soft);
-            flex-shrink: 0;
-        }
-        h3 { color: var(--ink); font-size: 1.12rem; font-weight: 600; margin-bottom: 4px; line-height: 1.4; }
-        h4 {
-            color: var(--accent);
-            font-size: 0.82rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin: 18px 0 8px;
-        }
-        p { color: var(--ink-soft); }
+        .stat-card .ic svg { width: 22px; height: 22px; }
+        .stat-card:nth-child(2) .ic { background: rgba(59,130,246,0.12); color: var(--blue); }
+        .stat-card:nth-child(3) .ic { background: rgba(168,85,247,0.14); color: var(--purple); }
+        .stat-card:nth-child(4) .ic { background: rgba(45,212,191,0.12); color: var(--mint); }
+        .stat-num { font-size: 1.45rem; font-weight: 700; line-height: 1.2; }
+        .stat-label { color: var(--text-soft); font-size: 0.9rem; margin-top: 4px; }
 
-        /* Education */
-        .gpa {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 8px;
-            background: var(--accent-soft);
-            color: #0b6b51;
-            padding: 8px 16px;
-            border-radius: 999px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 14px;
-        }
-        .gpa span { font-weight: 500; color: #1c8a6b; font-size: 0.85rem; }
-        .edu-meta { color: var(--muted); font-size: 0.95rem; }
-
-        /* Skills */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
-        .skill {
-            background: #fafbfc;
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 20px;
-        }
-        .skill h3 { font-size: 1.02rem; margin-bottom: 8px; }
-        .skill p { font-size: 0.92rem; }
-
-        /* Courses */
-        .courses { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .course-year {
-            background: #fafbfc;
-            border: 1px solid var(--line);
-            border-left: 3px solid var(--accent);
-            border-radius: 12px;
-            padding: 20px 22px;
-        }
-        .course-year h3 { margin-bottom: 14px; font-size: 1.05rem; }
-        .course-year ul { list-style: none; }
-        .course-year li {
-            font-size: 0.95rem;
-            padding: 5px 0 5px 22px;
-            position: relative;
-            color: var(--ink-soft);
-        }
-        .course-year li::before {
-            content: "";
-            position: absolute;
-            left: 2px; top: 13px;
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-            opacity: 0.55;
-        }
-        .score {
-            color: #0b6b51;
-            background: var(--accent-soft);
-            font-weight: 600;
-            font-size: 0.78rem;
-            padding: 1px 8px;
-            border-radius: 999px;
-            margin-left: 4px;
-            white-space: nowrap;
+        /* Cards / glass */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 28px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
-        /* Extracurriculars */
-        .activity { padding: 4px 0; }
-        .activity + .activity { border-top: 1px solid var(--line); margin-top: 22px; padding-top: 22px; }
-        .role-tag {
-            display: inline-block;
-            font-size: 0.72rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: var(--muted);
-            margin-bottom: 6px;
+        /* Music tabs */
+        .tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
+        .tab {
+            display: inline-flex; align-items: center; gap: 9px;
+            padding: 11px 20px; border-radius: 999px;
+            background: var(--surface); border: 1px solid var(--border);
+            color: var(--text-soft); font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.9rem;
+            cursor: pointer; transition: 0.2s;
         }
-        .leadership {
-            background: linear-gradient(180deg, #f3faf7 0%, #fafbfc 100%);
-            border: 1px solid #d8efe7;
-            border-radius: 14px;
-            padding: 18px 22px;
-            margin: 14px 0;
+        .tab svg { width: 17px; height: 17px; }
+        .tab:hover { color: var(--text); border-color: var(--border-strong); }
+        .tab.active { background: var(--grad); color: #06101f; border-color: transparent; }
+        .tab-panel { display: none; animation: fade 0.4s ease; }
+        .tab-panel.active { display: block; }
+        @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .panel-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; }
+        .achv-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+        .achv-list li { display: flex; gap: 13px; align-items: flex-start; }
+        .achv-list .mk { color: var(--mint); flex-shrink: 0; margin-top: 3px; }
+        .achv-list .mk svg { width: 19px; height: 19px; }
+        .achv-list .t { font-weight: 600; color: var(--text); font-family: 'Poppins', sans-serif; font-size: 0.98rem; }
+        .achv-list .d { color: var(--text-soft); font-size: 0.92rem; }
+        .audio-ph {
+            border-radius: 16px; border: 1px dashed var(--border-strong);
+            background: var(--bg-2); padding: 22px; display: flex; flex-direction: column; gap: 14px;
         }
-        .leadership h3, .leadership h4 { margin-top: 0; }
-        .leadership p { font-size: 0.94rem; }
-        .instrument {
-            margin: 16px 0;
-            padding-left: 18px;
-            border-left: 2px solid var(--line);
-        }
-        .instrument ul { list-style: none; }
-        .instrument li {
-            font-size: 0.95rem;
-            padding: 4px 0 4px 22px;
-            position: relative;
-            color: var(--ink-soft);
-        }
-        .instrument li::before {
-            content: "♪";
-            position: absolute;
-            left: 0; top: 3px;
-            color: var(--accent);
-            font-size: 0.9rem;
-        }
-        .instrument p { font-size: 0.95rem; }
+        .audio-ph .row { display: flex; align-items: center; gap: 14px; }
+        .audio-ph .play { width: 46px; height: 46px; border-radius: 50%; background: var(--grad); display: grid; place-items: center; color: #06101f; flex-shrink: 0; }
+        .audio-ph .play svg { width: 20px; height: 20px; }
+        .audio-ph .bar { height: 6px; border-radius: 999px; background: rgba(255,255,255,0.08); flex: 1; overflow: hidden; }
+        .audio-ph .bar span { display: block; height: 100%; width: 35%; background: var(--grad); border-radius: 999px; }
+        .audio-ph .note { color: var(--text-dim); font-size: 0.82rem; }
 
-        footer {
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.82rem;
-            margin-top: 36px;
+        /* Leadership */
+        .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .lead-card { position: relative; overflow: hidden; }
+        .lead-card .tag {
+            display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--mint); background: rgba(45,212,191,0.1); padding: 4px 11px; border-radius: 999px; margin-bottom: 14px;
         }
+        .lead-card .head { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+        .lead-card .head .ic { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: rgba(59,130,246,0.12); color: var(--blue); flex-shrink: 0; }
+        .lead-card .head .ic svg { width: 24px; height: 24px; }
+        .lead-card h3 { font-size: 1.2rem; font-weight: 700; }
+        .lead-card .sub { color: var(--text-dim); font-size: 0.85rem; }
+        .lead-card p { color: var(--text-soft); font-size: 0.95rem; margin-top: 6px; }
+        .lead-card.purple .ic { background: rgba(168,85,247,0.14); color: var(--purple); }
+        .lead-card.purple .tag { color: var(--purple); background: rgba(168,85,247,0.1); }
 
-        @media (max-width: 640px) {
-            header { padding: 56px 22px 48px; }
-            section { padding: 26px 22px; }
-            .courses { grid-template-columns: 1fr; }
+        /* Academics */
+        .acad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        .acad-card .head { display: flex; align-items: center; gap: 13px; margin-bottom: 20px; }
+        .acad-card .head .ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(59,130,246,0.12); color: var(--blue); }
+        .acad-card.mint .head .ic { background: rgba(45,212,191,0.12); color: var(--mint); }
+        .acad-card .head h3 { font-size: 1.18rem; font-weight: 700; }
+        .acad-card .head .sub { color: var(--text-dim); font-size: 0.82rem; }
+        .course { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid var(--border); }
+        .course:first-of-type { border-top: 0; }
+        .course .name { font-size: 0.96rem; color: var(--text); }
+        .course .score { font-family: 'Poppins', sans-serif; font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: rgba(45,212,191,0.14); color: var(--mint); white-space: nowrap; }
+        .gpa-banner {
+            margin-top: 22px; display: flex; align-items: center; gap: 16px;
+            padding: 18px 22px; border-radius: 16px;
+            background: linear-gradient(120deg, rgba(59,130,246,0.14), rgba(168,85,247,0.12));
+            border: 1px solid var(--border-strong);
         }
+        .gpa-banner .big { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 800; }
+        .gpa-banner .lbl { color: var(--text-soft); font-size: 0.9rem; }
 
-        @media print {
-            body { background: #fff; }
-            header { border-radius: 0; padding: 40px 30px; }
-            section, .skill, .course-year, .leadership { box-shadow: none; }
-            section { break-inside: avoid; border-color: #ddd; }
+        /* Contact */
+        .contact-card { text-align: center; padding: 56px 28px; }
+        .contact-card h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; }
+        .contact-card p { color: var(--text-soft); margin: 14px auto 30px; max-width: 460px; }
+        .contact-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        /* Footer */
+        footer { border-top: 1px solid var(--border); padding: 30px 0; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--text-dim); font-size: 0.88rem; }
+        .footer-inner .brand { font-size: 1rem; color: var(--text-soft); }
+
+        /* Reveal animation */
+        .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.in { opacity: 1; transform: none; }
+
+        /* Responsive */
+        @media (max-width: 880px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .portrait { max-width: 340px; margin: 0 auto; width: 100%; }
+            .spotlight-grid { grid-template-columns: repeat(2, 1fr); }
+            .panel-grid, .lead-grid, .acad-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            section { padding: 64px 0; }
+            .nav-links { display: none; }
+            .nav-toggle { display: block; }
+            .nav-links.open {
+                display: flex; flex-direction: column; position: absolute; top: 66px; left: 0; right: 0;
+                background: rgba(10,14,26,0.97); padding: 18px 24px; gap: 18px; border-bottom: 1px solid var(--border);
+            }
+            .spotlight-grid { grid-template-columns: 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            * { scroll-behavior: auto; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="eyebrow">Student &middot; Musician &middot; Leader</div>
-        <h1>Ethan Giri</h1>
-        <div class="contact">
-            <a href="tel:6025516373">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                (602) 551-6373
-            </a>
-            <a href="mailto:giri.ethan@gmail.com">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                giri.ethan@gmail.com
-            </a>
+    <nav>
+        <div class="wrap nav-inner">
+            <a href="#home" class="brand">Ethan Giri<span class="dot">.</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#spotlight">Highlights</a>
+                <a href="#music">Music</a>
+                <a href="#leadership">Leadership</a>
+                <a href="#academics">Academics</a>
+                <a href="#contact" class="nav-cta">Get in Touch</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="hero">
+        <div class="wrap hero-grid">
+            <div>
+                <span class="badge"><span class="pulse"></span> Basha High School · Class of 2028</span>
+                <h1>Hi, I'm <span class="grad-text">Ethan Giri.</span></h1>
+                <div class="typed-line">I'm a <span id="typed"></span><span class="cursor">&nbsp;</span></div>
+                <p class="lead">A high school multi-instrumentalist and student leader blending performance, mentorship, and academic drive — from the Carnegie Hall stage to the front of the band council.</p>
+                <div class="hero-actions">
+                    <a href="#music" class="btn btn-primary"><i data-lucide="music-4"></i> View My Work</a>
+                    <a href="#contact" class="btn btn-ghost"><i data-lucide="send"></i> Get in Touch</a>
+                </div>
+                <div class="hero-contacts">
+                    <a href="mailto:giri.ethan@gmail.com" class="chip"><i data-lucide="mail"></i> giri.ethan@gmail.com</a>
+                    <a href="tel:6025516373" class="chip"><i data-lucide="phone"></i> (602) 551-6373</a>
+                </div>
+            </div>
+            <div class="portrait">
+                <div class="glow"></div>
+                <i data-lucide="image"></i>
+                <span class="ph-label">Performance photo<br>coming soon</span>
+            </div>
         </div>
     </header>
 
-    <div class="container">
-        <main>
-            <section id="education">
-                <h2>Education</h2>
-                <div class="gpa">4.6 GPA <span>weighted</span></div>
-                <h3>Basha High School</h3>
-                <p class="edu-meta">11th Grade</p>
-            </section>
+    <!-- SPOTLIGHT -->
+    <section id="spotlight">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="eyebrow">Spotlight</span>
+                <h2>Highlights at a glance</h2>
+                <p>A few of the moments and milestones I'm most proud of.</p>
+            </div>
+            <div class="spotlight-grid">
+                <div class="stat-card reveal">
+                    <div class="ic"><i data-lucide="graduation-cap"></i></div>
+                    <div class="stat-num">4.6 GPA</div>
+                    <div class="stat-label">Weighted</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="ic"><i data-lucide="star"></i></div>
+                    <div class="stat-num">All-State &amp; Carnegie Hall</div>
+                    <div class="stat-label">Clarinet Soloist</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="ic"><i data-lucide="users"></i></div>
+                    <div class="stat-num">Band Council President</div>
+                    <div class="stat-label">Appointed · 2026–27</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="ic"><i data-lucide="trophy"></i></div>
+                    <div class="stat-num">WGAZ State Champion</div>
+                    <div class="stat-label">Open Class · Winter Drumline</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <section id="skills">
-                <h2>Core Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill">
-                        <h3>Advanced Academic Foundations</h3>
-                        <p>Highly proficient in advanced mathematics (Calculus, Precalculus) and foundational sciences (Chemistry, Biology).</p>
-                    </div>
-                    <div class="skill">
-                        <h3>Instruction &amp; Mentorship</h3>
-                        <p>Experienced in guiding, coaching, and explaining complex concepts to peers and younger students.</p>
-                    </div>
-                    <div class="skill">
-                        <h3>Leadership &amp; Organization</h3>
-                        <p>Proven track record of coordinating logistics and volunteer personnel at events while achieving administrative deadlines.</p>
+    <!-- MUSIC -->
+    <section id="music">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="eyebrow">Music</span>
+                <h2>One musician, many voices</h2>
+                <p>A multi-instrumentalist in the Basha Bands Program since 6th grade — across concert, jazz, and percussion ensembles.</p>
+            </div>
+
+            <div class="tabs reveal" role="tablist">
+                <button class="tab active" data-tab="clarinet"><i data-lucide="music-2"></i> Clarinet</button>
+                <button class="tab" data-tab="sax"><i data-lucide="music"></i> Saxophone</button>
+                <button class="tab" data-tab="perc"><i data-lucide="drum"></i> Percussion</button>
+                <button class="tab" data-tab="marching"><i data-lucide="flag"></i> Marching</button>
+            </div>
+
+            <div class="card reveal">
+                <!-- Clarinet -->
+                <div class="tab-panel active" id="clarinet">
+                    <div class="panel-grid">
+                        <ul class="achv-list">
+                            <li><span class="mk"><i data-lucide="award"></i></span><div><div class="t">Carnegie Hall Soloist</div><div class="d">Featured with the Basha Symphony Orchestra through the National Concerts Program (10th grade).</div></div></li>
+                            <li><span class="mk"><i data-lucide="badge-check"></i></span><div><div class="t">Arizona All-State Band</div><div class="d">Auditioned in for 8th, 9th, and 10th grade, plus the top Concert Ensemble at Basha (9th).</div></div></li>
+                            <li><span class="mk"><i data-lucide="star"></i></span><div><div class="t">Outstanding Performer of the Year</div><div class="d">Awarded in 9th grade.</div></div></li>
+                        </ul>
+                        <div class="audio-ph">
+                            <div class="row">
+                                <div class="play"><i data-lucide="play"></i></div>
+                                <div class="bar"><span></span></div>
+                            </div>
+                            <div class="note">Audio sample placeholder — embed a clarinet recording here later.</div>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <section id="courses">
-                <h2>School Courses</h2>
-                <div class="courses">
-                    <div class="course-year">
-                        <h3>9th Grade</h3>
-                        <ul>
-                            <li>Marching Band</li>
-                            <li>Wind Ensemble</li>
-                            <li>Honors English 9</li>
-                            <li>Honors Precalculus</li>
-                            <li>Honors Spanish 3</li>
-                            <li>Honors Chemistry</li>
-                            <li>AP World History <span class="score">Score: 4</span></li>
+                <!-- Saxophone -->
+                <div class="tab-panel" id="sax">
+                    <div class="panel-grid">
+                        <ul class="achv-list">
+                            <li><span class="mk"><i data-lucide="badge-check"></i></span><div><div class="t">Top Jazz Ensemble at Basha</div><div class="d">Auditioned into the top jazz group on tenor saxophone (10th grade).</div></div></li>
+                            <li><span class="mk"><i data-lucide="award"></i></span><div><div class="t">Superior with Distinction</div><div class="d">Earned at the Area Jazz Festival (10th grade).</div></div></li>
                         </ul>
-                    </div>
-                    <div class="course-year">
-                        <h3>10th Grade</h3>
-                        <ul>
-                            <li>Marching Band</li>
-                            <li>Wind Ensemble</li>
-                            <li>Varsity Jazz Band</li>
-                            <li>AP Spanish 4</li>
-                            <li>AP Seminar</li>
-                            <li>AP Calculus BC</li>
-                            <li>AP Chemistry</li>
-                            <li>AP Biology <span class="score">Score: 5</span></li>
-                        </ul>
+                        <div class="audio-ph">
+                            <div class="row">
+                                <div class="play"><i data-lucide="play"></i></div>
+                                <div class="bar"><span></span></div>
+                            </div>
+                            <div class="note">Audio sample placeholder — embed a jazz solo here later.</div>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <section id="extracurriculars">
-                <h2>Extracurriculars</h2>
-
-                <div class="activity">
-                    <div class="leadership">
-                        <span class="role-tag">Appointed &middot; Upcoming school year</span>
-                        <h3>Band Council President &mdash; 11th Grade</h3>
-                        <p>Coordinating various committees that are dedicated to the success of the Basha Bands through recruitment, mentorship, and organization.</p>
-                    </div>
-
-                    <span class="role-tag">6th Grade &ndash; Current</span>
-                    <h3>Band</h3>
-                    <p>Multi-instrumentalist in multiple different ensembles in the Basha Bands Program.</p>
-
-                    <div class="instrument">
-                        <h4>Bb Clarinet</h4>
-                        <ul>
-                            <li>Auditioned into Arizona All-State Band (8th, 9th, 10th grade) and top Concert Ensemble at Basha (9th)</li>
-                            <li>Awarded "Outstanding Performer of the Year" (9th)</li>
-                            <li>Featured as a Carnegie Hall Soloist with the Basha Symphony Orchestra through the National Concerts Program (10th)</li>
+                <!-- Percussion -->
+                <div class="tab-panel" id="perc">
+                    <div class="panel-grid">
+                        <ul class="achv-list">
+                            <li><span class="mk"><i data-lucide="trophy"></i></span><div><div class="t">WGAZ Open Class State Champions</div><div class="d">Basha Indoor Percussion Ensemble (Winter Drumline), 10th grade — and a member every year since 9th.</div></div></li>
+                            <li><span class="mk"><i data-lucide="drumstick"></i></span><div><div class="t">Basha Snareline</div><div class="d">Auditioned for a spot on the snareline (11th grade).</div></div></li>
                         </ul>
-                    </div>
-
-                    <div class="instrument">
-                        <h4>Tenor Saxophone</h4>
-                        <ul>
-                            <li>Auditioned into the top Jazz Ensemble at Basha (10th)</li>
-                            <li>Earned "Superior with Distinction" at the Area Jazz Festival (10th)</li>
-                        </ul>
-                    </div>
-
-                    <div class="instrument">
-                        <h4>Snare Drum</h4>
-                        <ul>
-                            <li>Auditioned for a spot on the Basha Snareline (11th)</li>
-                        </ul>
-                    </div>
-
-                    <div class="instrument">
-                        <h4>Marching Band</h4>
-                        <p>Participated in the Basha Bear Regiment every year since 9th grade, including a featured Clarinet quartet role in the 10th-grade production.</p>
-                    </div>
-
-                    <div class="instrument">
-                        <h4>Winter Drumline</h4>
-                        <p>Participated in the Basha Indoor Percussion Ensemble every year since 9th grade; named WGAZ Open Class State Champions (10th).</p>
+                        <div class="audio-ph">
+                            <div class="row">
+                                <div class="play"><i data-lucide="play"></i></div>
+                                <div class="bar"><span></span></div>
+                            </div>
+                            <div class="note">Video/audio placeholder — embed a drumline clip here later.</div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="activity">
-                    <span class="role-tag">8th Grade &ndash; Current</span>
-                    <h3>Spanish Honors Society</h3>
-                    <div class="leadership">
-                        <h4>Junior Chapter Vice President (9th Grade)</h4>
-                        <p>Organized and participated in volunteering efforts at school events, including running booths at the annual Hugs for the Holidays event. Actively involved in recruitment at Club Drives.</p>
+                <!-- Marching -->
+                <div class="tab-panel" id="marching">
+                    <div class="panel-grid">
+                        <ul class="achv-list">
+                            <li><span class="mk"><i data-lucide="flag"></i></span><div><div class="t">Basha Bear Regiment</div><div class="d">Marching every year since 9th grade in the Basha Bands marching program.</div></div></li>
+                            <li><span class="mk"><i data-lucide="users"></i></span><div><div class="t">Featured Clarinet Quartet</div><div class="d">Spotlighted role in the 10th-grade production.</div></div></li>
+                        </ul>
+                        <div class="audio-ph">
+                            <div class="row">
+                                <div class="play"><i data-lucide="play"></i></div>
+                                <div class="bar"><span></span></div>
+                            </div>
+                            <div class="note">Field show video placeholder — embed a marching clip here later.</div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="activity">
-                    <span class="role-tag">11th Grade &ndash; Current</span>
-                    <h3>National Honors Society</h3>
-                    <div class="leadership">
-                        <span class="role-tag">Appointed &middot; Upcoming school year</span>
-                        <h4>Junior Blood Drive Coordinator</h4>
-                        <p>Responsible for promoting and organizing four annual blood drives at Basha.</p>
+    <!-- LEADERSHIP -->
+    <section id="leadership">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="eyebrow">Leadership &amp; Impact</span>
+                <h2>Leading from the front</h2>
+                <p>Coordinating people, logistics, and deadlines — on and off the stage.</p>
+            </div>
+            <div class="lead-grid">
+                <div class="card lead-card reveal">
+                    <span class="tag">Appointed · Upcoming year</span>
+                    <div class="head">
+                        <div class="ic"><i data-lucide="users"></i></div>
+                        <div>
+                            <h3>Band Council President</h3>
+                            <div class="sub">Basha Bands · 11th Grade</div>
+                        </div>
+                    </div>
+                    <p>Coordinating committees dedicated to the success of the Basha Bands through recruitment, mentorship, and organization.</p>
+                </div>
+                <div class="card lead-card purple reveal">
+                    <span class="tag">Appointed · Upcoming year</span>
+                    <div class="head">
+                        <div class="ic"><i data-lucide="droplet"></i></div>
+                        <div>
+                            <h3>Junior Blood Drive Coordinator</h3>
+                            <div class="sub">National Honors Society · 11th Grade</div>
+                        </div>
+                    </div>
+                    <p>Responsible for promoting and organizing four annual blood drives at Basha.</p>
+                </div>
+                <div class="card lead-card reveal">
+                    <span class="tag">9th Grade</span>
+                    <div class="head">
+                        <div class="ic"><i data-lucide="languages"></i></div>
+                        <div>
+                            <h3>Spanish Honors Society — Jr. Chapter VP</h3>
+                            <div class="sub">Member 8th Grade – Current</div>
+                        </div>
+                    </div>
+                    <p>Organized and ran volunteering efforts at school events, including booths at the annual Hugs for the Holidays event, plus active recruitment at Club Drives.</p>
+                </div>
+                <div class="card lead-card purple reveal">
+                    <span class="tag">6th Grade – Current</span>
+                    <div class="head">
+                        <div class="ic"><i data-lucide="heart-handshake"></i></div>
+                        <div>
+                            <h3>Mentorship &amp; Instruction</h3>
+                            <div class="sub">Peers &amp; younger students</div>
+                        </div>
+                    </div>
+                    <p>Experienced in guiding, coaching, and explaining complex concepts — pairing academic strength with patience and clear communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACADEMICS -->
+    <section id="academics">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="eyebrow">Academics</span>
+                <h2>Driven in the classroom</h2>
+                <p>A rigorous AP-heavy course load across STEM and the humanities.</p>
+            </div>
+            <div class="acad-grid">
+                <div class="card acad-card reveal">
+                    <div class="head">
+                        <div class="ic"><i data-lucide="flask-conical"></i></div>
+                        <div>
+                            <h3>Advanced Foundations</h3>
+                            <div class="sub">Math &amp; Science</div>
+                        </div>
+                    </div>
+                    <div class="course"><span class="name">AP Calculus BC</span></div>
+                    <div class="course"><span class="name">AP Chemistry</span></div>
+                    <div class="course"><span class="name">AP Biology</span><span class="score">Score: 5</span></div>
+                    <div class="course"><span class="name">AP World History</span><span class="score">Score: 4</span></div>
+                    <div class="course"><span class="name">Honors Precalculus · Honors Chemistry</span></div>
+                </div>
+                <div class="card acad-card mint reveal">
+                    <div class="head">
+                        <div class="ic"><i data-lucide="globe"></i></div>
+                        <div>
+                            <h3>Language &amp; Culture</h3>
+                            <div class="sub">Humanities &amp; Leadership</div>
+                        </div>
+                    </div>
+                    <div class="course"><span class="name">AP Spanish 4</span></div>
+                    <div class="course"><span class="name">AP Seminar</span></div>
+                    <div class="course"><span class="name">Honors Spanish 3 · Honors English 9</span></div>
+                    <div class="course"><span class="name">Spanish Honors Society — Jr. Chapter VP</span></div>
+                    <div class="gpa-banner">
+                        <span class="big grad-text">4.6</span>
+                        <span class="lbl">Weighted GPA<br>Basha High School · 11th Grade</span>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
+    </section>
 
-        <footer>Ethan Giri &middot; Resume</footer>
-    </div>
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="wrap">
+            <div class="card contact-card reveal">
+                <span class="eyebrow">Get in Touch</span>
+                <h2>Let's connect</h2>
+                <p>Reach out about performances, collaborations, or anything music and leadership.</p>
+                <div class="contact-actions">
+                    <a href="mailto:giri.ethan@gmail.com" class="btn btn-primary"><i data-lucide="mail"></i> Email Me</a>
+                    <a href="tel:6025516373" class="btn btn-ghost"><i data-lucide="phone"></i> (602) 551-6373</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap footer-inner">
+            <span class="brand">Ethan Giri<span style="color:var(--mint)">.</span></span>
+            <span>Ethan Giri &copy; <span id="year"></span> · Class of 2028</span>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide icons
+        lucide.createIcons();
+
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Typing effect
+        (function () {
+            const words = ['Musician', 'Student Leader', 'Academic', 'Multi-Instrumentalist'];
+            const el = document.getElementById('typed');
+            let w = 0, c = 0, deleting = false;
+            function tick() {
+                const word = words[w];
+                el.textContent = word.slice(0, c);
+                if (!deleting && c < word.length) { c++; }
+                else if (!deleting && c === word.length) { deleting = true; return setTimeout(tick, 1600); }
+                else if (deleting && c > 0) { c--; }
+                else { deleting = false; w = (w + 1) % words.length; }
+                setTimeout(tick, deleting ? 55 : 110);
+            }
+            tick();
+        })();
+
+        // Mobile nav
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => links.classList.toggle('open'));
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+        // Music tabs
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Scroll reveal
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = (i % 4 * 60) + 'ms';
+            io.observe(el);
+        });
+    </script>
 </body>
 </html>
